@@ -15,7 +15,8 @@ cd /content/static
 !mkdir images
 cd ..
 '''
-
+heroku plugins:install heroku-builds
+heroku builds:cache:purge
 
 app = Flask(__name__)
 image_folder = os.path.join('static', 'images')
