@@ -23,13 +23,13 @@ image_folder = os.path.join('static', 'images')
 app.config["UPLOAD_FOLDER"] = image_folder
 
 
-#model = load_model('my_model.h5')
+model = load_model('trained_weights_final(1).h5')
 input_shape = (224, 224, 3)
 # ResNet50 is trained on color images with 224x224 pixels
 import tensorflow.keras.applications.resnet50 as resnet50
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
-model = resnet50.ResNet50(weights='imagenet',input_shape=input_shape)
+#model = resnet50.ResNet50(weights='imagenet',input_shape=input_shape)
 
 
 def predict_label(img_path):
